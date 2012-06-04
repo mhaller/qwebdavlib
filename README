@@ -1,6 +1,6 @@
 QWebDAV Library (qwebdavlib) version 1.0
 
-is a library for Qt4 to provide access to WebDAV servers.
+is a library for Qt4 and provides access to WebDAV servers.
 WebDAV is an extension for HTTP, so that a Web server can
 provide write access in addition to read access. The WebDAV
 standard provides the essential functionalities to access
