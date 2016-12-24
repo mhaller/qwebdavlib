@@ -6,44 +6,44 @@ set(qwebdav_SRCS
     qwebdavitem.cpp
 )
 
-add_library(QWebDav ${qwebdav_SRCS})
-generate_export_header(QWebDav)
+add_library(QWebdav ${qwebdav_SRCS})
+generate_export_header(QWebdav)
 
-target_compile_definitions(QWebDav PRIVATE QWEBDAV_LIBRARY=1)
-target_include_directories(QWebDav
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/QWebDav>")
+target_compile_definitions(QWebdav PRIVATE QWEBDAV_LIBRARY=1)
+target_include_directories(QWebdav
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/QWebdav>")
 
-target_link_libraries(QWebDav
+target_link_libraries(QWebdav
     PUBLIC
         Qt5::Core
         Qt5::Network
         Qt5::Xml
 )
 
-set_target_properties(QWebDav PROPERTIES
+set_target_properties(QWebdav PROPERTIES
     VERSION     ${QWEBDAV_VERSION_STRING}
     SOVERSION   ${QWEBDAV_SOVERSION}
-    EXPORT_NAME "QWebDav"
+    EXPORT_NAME "QWebdav"
 )
 
-ecm_generate_headers(QWebDav_HEADERS
+ecm_generate_headers(QWebdav_HEADERS
     HEADER_NAMES
-    QWebDav
-    QWebDavItem
-    QWebDavDirParser
+    QWebdav
+    QWebdavItem
+    QWebdavDirParser
     QNaturalSort
-    QWebDav_global
+    QWebdav_global
 
-    REQUIRED_HEADERS QWebDav_HEADERS
+    REQUIRED_HEADERS QWebdav_HEADERS
 )
 
-install(TARGETS QWebDav
-    EXPORT QWebDavTargets
+install(TARGETS QWebdav
+    EXPORT QWebdavTargets
     ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/qwebdav_export.h
-    ${QWebDav_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/QWebDav
+    ${QWebdav_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/QWebdav
     COMPONENT Devel
 )

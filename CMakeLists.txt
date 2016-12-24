@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 
-project(QWebDav)
+project(QWebdav)
 
 set(VERSION 1.0)
 
@@ -25,19 +25,19 @@ include(ECMGenerateHeaders)
 ecm_setup_version(${VERSION}
     VARIABLE_PREFIX QWEBDAV
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/qwebdav_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/QWebDavConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/QWebdavConfigVersion.cmake"
     SOVERSION 1)
 
 add_subdirectory(qwebdavlib)
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/QWebDav")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/QWebdav")
 
 include(ECMPackageConfigHelpers)
 
 ecm_configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/QWebDavConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/QWebDavConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/QWebdavConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/QWebdavConfig.cmake"
     INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
@@ -46,13 +46,13 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qwebdav_version.h
         COMPONENT Devel)
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/QWebDavConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/QWebDavConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/QWebdavConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/QWebdavConfigVersion.cmake"
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel)
 
-install(EXPORT QWebDavTargets
+install(EXPORT QWebdavTargets
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        FILE QWebDavTargets.cmake)
+        FILE QWebdavTargets.cmake)
 
 feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
