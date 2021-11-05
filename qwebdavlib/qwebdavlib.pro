@@ -6,8 +6,8 @@ QT       -= gui
 TARGET = qwebdav
 TEMPLATE = lib
 
-# Enable DEBUG output with qDebug()
-DEFINES += DEBUG_WEBDAV
+# SG: remove debugging define
+#DEFINES += DEBUG_WEBDAV
 
 # Enable extended WebDAV properties (see QWebDavItem.h/cpp)
 #DEFINES += QWEBDAVITEM_EXTENDED_PROPERTIES
@@ -30,3 +30,8 @@ OTHER_FILES += \
     CHANGES \
     LICENSE \
     README
+
+headers.files = $$HEADERS
+headers.path = $$WEBDAV_INCLUDE_DIR
+target.path = $$WEBDAV_LIB_DIR
+INSTALLS += headers target
